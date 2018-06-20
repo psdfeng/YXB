@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>看图识药</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'DrugID/style.css' %}" />
+</head>
+<body>
+{% if drug_list %}
+    <ul>
+        {% for drug in drug_list %}
+            <li><a href="">{{ drug.name }}</a> </li>
+            <li>{{ drug.code }} </li>
+            <li>{{ drug.form }} </li>
+            <li>{{ drug.company }} </li>
+            <li>{{ drug.img }} </li>
+            <li>{{ drug.thumb }} </li>
+            <li>{{ drug.instructions }} </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>没有药品信息</p>
+{% endif %}
+
+</body>
+</html>
